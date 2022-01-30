@@ -55,10 +55,13 @@ def selection_menu():
     print("Please pick one of the following options \n 1. Calculate Snelheid Zonder Weerstand \n 2. Calculate Snelheid met Weerstand \n 3. Calculate Maximale Hoogte")
     selection = input(" Selection: ")
     if selection == "1":
+        print("\033c")
         calculate_snelheid_van_hoogte_zonder_luchtweerstand()
     elif selection == "2":
+        print("\033c")
         calculate_snelheid_van_hoogte_met_lucht_weerstand()
     elif selection == "3":
+        print("\033c")
         calculate_maximale_hoogte_met_kinetische_energy()
 
 selection_menu()
