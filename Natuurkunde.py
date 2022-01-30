@@ -1,5 +1,6 @@
 import math
 
+answer = 0
 # Ezv + Ek = Ezn
 
 # Ez = m * g * h
@@ -19,6 +20,11 @@ def calculate_snelheid_van_hoogte_zonder_luchtweerstand():
     v = math.sqrt(EkWortel)
     print(vars())
 
+    global answer
+    answer = v
+
+    selection_menu()
+
 def calculate_snelheid_van_hoogte_met_lucht_weerstand():
     # Ez = Ek + Q
     # m * g * h = 0.5 * m * v^2 + Fw * h
@@ -35,6 +41,11 @@ def calculate_snelheid_van_hoogte_met_lucht_weerstand():
     v = math.sqrt(EkWortel)
     print(vars())
 
+    global answer
+    answer = v
+
+    selection_menu()
+
 def calculate_maximale_hoogte_met_kinetische_energy():
     # EzV + Ek = EzN
     # m * g * h + 0.5 * m * v^2 = m * g * h
@@ -50,9 +61,15 @@ def calculate_maximale_hoogte_met_kinetische_energy():
     EvM = float(Ev / g)
     print(vars())
 
+    global answer
+    answer = v
+
+    selection_menu()
+
 def selection_menu():
     # Just for choosing the function
-    print("Please pick one of the following options \n 1. Calculate Snelheid Zonder Weerstand \n 2. Calculate Snelheid met Weerstand \n 3. Calculate Maximale Hoogte")
+    print("\033c")
+    print("Please pick one of the following options \n 1. Calculate Snelheid Zonder Weerstand \n 2. Calculate Snelheid met Weerstand \n 3. Calculate Maximale Hoogte \n 4. Exit \n Current Answer: " + str(answer))
     selection = input(" Selection: ")
     if selection == "1":
         print("\033c")
@@ -63,5 +80,7 @@ def selection_menu():
     elif selection == "3":
         print("\033c")
         calculate_maximale_hoogte_met_kinetische_energy()
+    elif selection == "4":
+        exit()
 
 selection_menu()
