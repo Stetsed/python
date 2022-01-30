@@ -16,12 +16,12 @@ def calculate_snelheid_van_hoogte_zonder_luchtweerstand():
     print(vars())
 
     global answer
-    answer = v
+    answer = ( str(v) + " m/s")
 
     selection_menu()
 
 def calculate_snelheid_van_hoogte_met_lucht_weerstand():
-    # Ez = Ek + Q
+    # Ez = Ek + Q1
     # m * g * h = 0.5 * m * v^2 + Fw * h
     hoogte = float(input("Wat is de hoogte in M?: "))
     massa = float(input("Wat is het gewicht in KG?: "))
@@ -37,7 +37,7 @@ def calculate_snelheid_van_hoogte_met_lucht_weerstand():
     print(vars())
 
     global answer
-    answer = v
+    answer = ( str(v) + " m/s")
 
     selection_menu()
 
@@ -57,7 +57,7 @@ def calculate_maximale_hoogte_met_kinetische_energy():
     print(vars())
 
     global answer
-    answer = HNa
+    answer = ( str(HNa) + " m")
 
     selection_menu()
 
