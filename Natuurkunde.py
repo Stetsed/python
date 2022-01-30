@@ -9,10 +9,10 @@ def calculate_snelheid_van_hoogte_zonder_luchtweerstand():
     massa = float(input("Wat is het gewicht in KG?: "))
     gravitatie = float(9.81)
 
-    Ez = float(massa * gravitatie * hoogte)
+    Zwaartekracht = float(massa * gravitatie * hoogte)
     EzDivide = float(0.5 * massa)
-    EkWortel = float(Ez / EzDivide)
-    v = math.sqrt(EkWortel)
+    VKwadraat = float(Zwaartekracht / EzDivide)
+    v = math.sqrt(VKwadraat)
     print(vars())
 
     global answer
@@ -25,15 +25,15 @@ def calculate_snelheid_van_hoogte_met_lucht_weerstand():
     # m * g * h = 0.5 * m * v^2 + Fw * h
     hoogte = float(input("Wat is de hoogte in M?: "))
     massa = float(input("Wat is het gewicht in KG?: "))
-    weerstand = float(input("Wat is the weerstand in N?:"))
+    weerstandkracht = float(input("Wat is the weerstand in N?:"))
     gravitatie = float(9.81)
 
-    EzS = float(massa * gravitatie * hoogte)
-    Q = float(weerstand * hoogte)
-    EzM = float(EzS - Q)
+    ZwaartekrachtStart = float(massa * gravitatie * hoogte)
+    Weerstand = float(weerstandkracht * hoogte)
+    EzMin = float(ZwaartekrachtStart - Weerstand)
     EzDivide = float(0.5 * massa)
-    EkWortel = float(EzM / EzDivide)
-    v = math.sqrt(EkWortel)
+    VKwadraat = float(EzMin / EzDivide)
+    v = math.sqrt(VKwadraat)
     print(vars())
 
     global answer
@@ -51,13 +51,13 @@ def calculate_maximale_hoogte_met_kinetische_energy():
     gravitatie = float(9.81)
 
     Ek = float(0.5 * (velocity * velocity))
-    EzV = float(hoogte * gravitatie)
-    Ev = float(Ek + EzV)
-    EvM = float(Ev / gravitatie)
+    EzVoor = float(hoogte * gravitatie)
+    Evoor = float(Ek + EzVoor)
+    HNa = float(Evoor / gravitatie)
     print(vars())
 
     global answer
-    answer = EvM
+    answer = HNa
 
     selection_menu()
 
