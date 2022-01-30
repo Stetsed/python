@@ -50,4 +50,15 @@ def calculate_maximale_hoogte_met_kinetische_energy():
     EvM = float(Ev / g)
     print(vars())
 
-calculate_maximale_hoogte_met_kinetische_energy()
+def selection_menu():
+    # Just for choosing the function
+    print("Please pick one of the following options \n 1. Calculate Snelheid Zonder Weerstand \n 2. Calculate Snelheid met Weerstand \n 3. Calculate Maximale Hoogte")
+    selection = input(" Selection: ")
+    if selection == "1":
+        calculate_snelheid_van_hoogte_zonder_luchtweerstand()
+    elif selection == "2":
+        calculate_snelheid_van_hoogte_met_lucht_weerstand()
+    elif selection == "3":
+        calculate_maximale_hoogte_met_kinetische_energy()
+
+selection_menu()
