@@ -35,4 +35,19 @@ def calculate_snelheid_van_hoogte_met_lucht_weerstand():
     v = math.sqrt(EkWortel)
     print(vars())
 
-calculate_snelheid_van_hoogte_met_lucht_weerstand()
+def calculate_maximale_hoogte_met_kinetische_energy():
+    # EzV + Ek = EzN
+    # m * g * h + 0.5 * m * v^2 = m * g * h
+    # m kan weg worden gestreept
+    # g * h + 0.5 * v^2 = g * h
+    h = float(input("Wat is de hoogte?: "))
+    v = float(input("Wat is de snelheid?: "))
+    g = float(9.81)
+
+    Ek = float(0.5 * (v * v))
+    EzV = float(h * g)
+    Ev = float(Ek + EzV)
+    EvM = float(Ev / g)
+    print(vars())
+
+calculate_maximale_hoogte_met_kinetische_energy()
