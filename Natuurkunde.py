@@ -1,21 +1,16 @@
 import math
 
 answer = 0
-# Ezv + Ek = Ezn
-
-# Ez = m * g * h
-# Ek = 0.5*m*v^2
-# m * g * h + 0.5 * m * v^2 = m * g * h
 
 def calculate_snelheid_van_hoogte_zonder_luchtweerstand():
     # Ez = Ek
     # m * g * h = 0.5 * m * v^2
-    h = float(input("Wat is de hoogte?: "))
-    m = float(input("Wat is het gewicht in KG?: "))
-    g = float(9.81)
+    hoogte = float(input("Wat is de hoogte?: "))
+    massa = float(input("Wat is het gewicht in KG?: "))
+    gravitatie = float(9.81)
 
-    Ez = float(m * g * h)
-    EzDivide = float(0.5 * m)
+    Ez = float(massa * gravitatie * hoogte)
+    EzDivide = float(0.5 * massa)
     EkWortel = float(Ez / EzDivide)
     v = math.sqrt(EkWortel)
     print(vars())
@@ -28,15 +23,15 @@ def calculate_snelheid_van_hoogte_zonder_luchtweerstand():
 def calculate_snelheid_van_hoogte_met_lucht_weerstand():
     # Ez = Ek + Q
     # m * g * h = 0.5 * m * v^2 + Fw * h
-    h = float(input("Wat is de hoogte?: "))
-    m = float(input("Wat is het gewicht in KG?: "))
-    w = float(input("Wat is the weerstand?:"))
-    g = float(9.81)
+    hoogte = float(input("Wat is de hoogte in M?: "))
+    massa = float(input("Wat is het gewicht in KG?: "))
+    weerstand = float(input("Wat is the weerstand in N?:"))
+    gravitatie = float(9.81)
 
-    EzS = float(m * g * h)
-    Q = float(w * h)
+    EzS = float(massa * gravitatie * hoogte)
+    Q = float(weerstand * hoogte)
     EzM = float(EzS - Q)
-    EzDivide = float(0.5 * m)
+    EzDivide = float(0.5 * massa)
     EkWortel = float(EzM / EzDivide)
     v = math.sqrt(EkWortel)
     print(vars())
@@ -51,18 +46,18 @@ def calculate_maximale_hoogte_met_kinetische_energy():
     # m * g * h + 0.5 * m * v^2 = m * g * h
     # m kan weg worden gestreept
     # g * h + 0.5 * v^2 = g * h
-    h = float(input("Wat is de hoogte?: "))
-    v = float(input("Wat is de snelheid?: "))
-    g = float(9.81)
+    hoogte = float(input("Wat is de hoogte in M?: "))
+    velocity = float(input("Wat is de snelheid?: "))
+    gravitatie = float(9.81)
 
-    Ek = float(0.5 * (v * v))
-    EzV = float(h * g)
+    Ek = float(0.5 * (velocity * velocity))
+    EzV = float(hoogte * gravitatie)
     Ev = float(Ek + EzV)
-    EvM = float(Ev / g)
+    EvM = float(Ev / gravitatie)
     print(vars())
 
     global answer
-    answer = v
+    answer = EvM
 
     selection_menu()
 
