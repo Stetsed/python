@@ -77,5 +77,3 @@ def selection_menu():
         calculate_maximale_hoogte_met_kinetische_energy()
     elif selection == "4":
         exit()
-
-selection_menu()
