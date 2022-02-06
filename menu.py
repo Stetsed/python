@@ -12,7 +12,7 @@ def main_selection_menu():
     selection = input(" Selection: ")
     if selection == "1":
         print("\033c")
-        Scheikunde.selection_menu()
+        Scheikunde_selection_menu()
         main_selection_menu()
     elif selection == "2":
         print("\033c")
@@ -40,6 +40,28 @@ def Natuurkunde_selection_menu():
         print("\033c")
         answer = Natuurkunde.calculate_maximale_hoogte_met_kinetische_energy()
         Natuurkunde_selection_menu()
+    elif selection == "4":
+        return(answer)
+
+def Scheikunde_selection_menu():
+    # Just for choosing the function
+    global answer
+
+    print("\033c")
+    print("Please pick one of the following options \n 1. Calculate Moleculaire Massa. \n 2. Calculate hoeveelheid mol.\n 3. Calculate hoeveelheid ml \n 4. Exit \n Current Answer: " + str(answer))
+    selection = input(" Selection: ")
+    if selection == "1":
+        print("\033c")
+        answer = Scheikunde.calculate_moleculaire_massa()
+        Scheikunde_selection_menu()
+    elif selection == "2":
+        print("\033c")
+        answer = Scheikunde.calculate_hoeveelheid_mol()
+        Scheikunde_selection_menu()
+    elif selection == "3":
+        print("\033c")
+        answer = Scheikunde.calculate_hoeveelheid_ml()
+        Scheikunde_selection_menu()
     elif selection == "4":
         return(answer)
 
