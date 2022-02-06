@@ -18,7 +18,7 @@ def calculate_snelheid_van_hoogte_zonder_luchtweerstand():
     global answer
     answer = ( str(v) + " m/s")
 
-    selection_menu()
+    return(answer)
 
 def calculate_snelheid_van_hoogte_met_lucht_weerstand():
     # Ez = Ek + Q1
@@ -39,7 +39,7 @@ def calculate_snelheid_van_hoogte_met_lucht_weerstand():
     global answer
     answer = ( str(v) + " m/s")
 
-    selection_menu()
+    return(answer)
 
 def calculate_maximale_hoogte_met_kinetische_energy():
     # EzV + Ek = EzN
@@ -59,21 +59,4 @@ def calculate_maximale_hoogte_met_kinetische_energy():
     global answer
     answer = ( str(HNa) + " m")
 
-    selection_menu()
-
-def selection_menu():
-    # Just for choosing the function
-    print("\033c")
-    print("Please pick one of the following options \n 1. Calculate Snelheid Zonder Weerstand \n 2. Calculate Snelheid met Weerstand \n 3. Calculate Maximale Hoogte \n 4. Exit \n Current Answer: " + str(answer))
-    selection = input(" Selection: ")
-    if selection == "1":
-        print("\033c")
-        calculate_snelheid_van_hoogte_zonder_luchtweerstand()
-    elif selection == "2":
-        print("\033c")
-        calculate_snelheid_van_hoogte_met_lucht_weerstand()
-    elif selection == "3":
-        print("\033c")
-        calculate_maximale_hoogte_met_kinetische_energy()
-    elif selection == "4":
-        exit()
+    return(answer)
