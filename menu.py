@@ -65,4 +65,5 @@ def Scheikunde_selection_menu():
     elif selection == "4":
         return(answer)
 
-main_selection_menu()
+if __name__ == '__main__':
+    main_selection_menu()

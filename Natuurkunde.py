@@ -60,3 +60,6 @@ def calculate_maximale_hoogte_met_kinetische_energy():
     answer = ( str(HNa) + " m")
 
     return(answer)
+
+if __name__ == '__main__':
+    exit()

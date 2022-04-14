@@ -45,3 +45,6 @@ def calculate_hoeveelheid_ml():
     answer = (str(hoeveelheid_ml) + ' ml')
 
     return(answer)
+
+if __name__ == '__main__':
+    exit()
